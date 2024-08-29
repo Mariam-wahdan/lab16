@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import Mariam from './labbb16';
-import Tog from './lab16q2';
-import No from './lab16q3';
-import Home from './Home';
-function App() {
-  return (<> 
-  {/* <Mariam />
-  <Tog/> 
-  <No/> */}
-  <Home/>
+// import logo from './logo.svg';
+// import './App.css';
+// import Mariam from './labbb16';
+// import Tog from './lab16q2';
+// import No from './lab16q3';
+// import Home from './Home';
+// function App() {
+//   return (<> 
+//   {/* <Mariam />
+//   <Tog/> 
+//   <No/> */}
+//   {/* <Home/> */}
   
-  </>
+//   </>
  
     
-  );
-}
+//   );
+// }
 
-export default App;
+// export default App;
 
 
 
@@ -49,3 +49,28 @@ export default App;
 //     );
 //   }
 // export default App;
+
+
+// lab 19
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './homev1';
+import Products from './products';
+import ProductDetails from './product details'
+import NotFound from './notfound';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
